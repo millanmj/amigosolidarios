@@ -1,1 +1,59 @@
+<!-- <mat-grid-list  cols = "1"  rowHeight = "4:1" > 
+  <mat-grid-tile > 1 </mat-grid-tile > 
+  <mat-grid-tile > 2 </mat-grid-tile > 
+  <mat-grid-tile > 3 </mat-grid-tile > 
+  <mat-grid-tile > 4 </mat-grid-tile > 
+</mat-grid-list > -->
+<!-- 
+<mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile
+        *ngFor="let tile of tiles"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows"
+        [style.background]="tile.color">
+      {{tile.text}}
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+<app-navbar></app-navbar>
 <p>home works!</p>
+<app-projects></app-projects>
+<app-card></app-card>
+<app-about></app-about>
+<app-donate></app-donate>
+<app-contact></app-contact> -->
+
+<mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color">
+      <ng-container *ngIf="tile.text === 'One'">
+        <app-navbar></app-navbar>
+      </ng-container>
+      <ng-container *ngIf="tile.text === 'Two'">
+        <app-projects></app-projects>
+      </ng-container>
+      <ng-container *ngIf="tile.text === 'Three'">
+        <app-card></app-card>
+      </ng-container>
+      <ng-container *ngIf="tile.text === 'Four'">
+        <app-about></app-about>
+      </ng-container>
+      <ng-container *ngIf="tile.text === 'Five'">
+        <app-donate></app-donate>
+      </ng-container>
+      <ng-container *ngIf="tile.text === 'Six'">
+        <app-contact></app-contact>
+      </ng-container>
+
+
+
+    </mat-grid-tile>
+  </mat-grid-list>
+  
+ 
+  
+  
